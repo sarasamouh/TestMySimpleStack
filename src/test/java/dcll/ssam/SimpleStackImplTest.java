@@ -38,19 +38,34 @@ public class SimpleStackImplTest extends TestCase {
     }
 
     public void testPush() throws Exception {
-     assertEquals(0,simpleStack.getSize());
+
+
+        assertEquals(0,simpleStack.getSize());
         Item IT = new Item(new Integer (8));
         simpleStack.push(IT);
         assertEquals(1,simpleStack.getSize());
+
         Item s =  simpleStack.peek();
 
         assertTrue(s.getValue() instanceof Integer);
         Integer integer =(Integer)s.getValue();
-
+        assertEquals(8, integer.intValue());
+        assertEquals(IT.getValue(),integer);
     }
 
     public void testPeek() throws Exception {
 
+        assertEquals(0,simpleStack.getSize());
+        Item IT = new Item(new Integer (8));
+        simpleStack.push(IT);
+        assertEquals(1,simpleStack.getSize());
+
+        Item s =  simpleStack.peek();
+
+        assertTrue(s.getValue() instanceof Integer);
+        Integer integer =(Integer)s.getValue();
+        assertEquals(8, integer.intValue());
+        assertEquals(IT.getValue(),integer);
     }
 
     public void testPop() throws Exception {
